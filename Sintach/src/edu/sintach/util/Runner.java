@@ -30,7 +30,8 @@ public class Runner {
 	
 	public Runner(String icao){
 		
-		icao = this.icao;
+		//icao = this.icao;
+		
 		file = icao + ".txt";
 		link = "ftp://tgftp.nws.noaa.gov/data/observations/metar/stations/";
 		urlLink = link + icao + ".TXT";
