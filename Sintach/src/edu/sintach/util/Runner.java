@@ -3,10 +3,10 @@ package edu.sintach.util;
 public class Runner {
 	
 	private String icao;
-	private String file;
+	private String localFile;
 	private String link;
 	private String urlLink;
-	
+	private String localPath;
 	/*
 	public static void main(String[] args) {
 			
@@ -28,17 +28,17 @@ public class Runner {
 	}
 	*/
 	
-	public Runner(String icao){
+	public Runner(String icao, String localPath, String localFile, String link){
 		
-		file = icao + ".txt";
-		link = "ftp://tgftp.nws.noaa.gov/data/observations/metar/stations/";
+		localFile = icao + ".txt";
 		urlLink = link + icao + ".TXT";
 		
 		Downloader dl = new Downloader();
 		TextFileReader tfr = new TextFileReader();
 			
-		dl.loader(urlLink, file);
-		tfr.textreader(file);
+		dl.loader(urlLink, localPath, localFile);
+		
+		tfr.textreader(localPath + localFile);
 					
 	}
 

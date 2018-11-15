@@ -7,10 +7,10 @@ import java.io.*;
 
 public class Downloader {
 
-	public void loader(String urlLink, String file) {
+	public void loader(String urlLink, String localPath, String localFile) {
 				
 		String url = urlLink;
-		String filePath = file;	
+		String filePath = localPath + localFile;	
 		
 		try { 
 			
